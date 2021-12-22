@@ -11,9 +11,20 @@
       <img [src]="post.imagePath" [alt]="post.title" />
     </div>
     <p>{{ post?.content }}</p>
-    <mat-action-row>
-      <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
-      <button mat-button color="warn" (click)="onDelete(post.id)">
+    <mat-action-row *ngIf="userRole === 'user' || userRole === 'admin'">
+      <a
+        *ngIf="userId === post.creator"
+        mat-button
+        color="primary"
+        [routerLink]="['/edit', post.id]"
+        >EDIT</a
+      >
+      <button
+        *ngIf="userId === post.creator || userRole === 'admin'"
+        mat-button
+        color="warn"
+        (click)="onDelete(post.id)"
+      >
         DELETE
       </button>
     </mat-action-row>
