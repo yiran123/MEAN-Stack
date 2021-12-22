@@ -11,7 +11,7 @@
       <img [src]="post.imagePath" [alt]="post.title" />
     </div>
     <p>{{ post?.content }}</p>
-    <mat-action-row *ngIf="userRole === 'user' || userRole === 'admin'">
+    <mat-action-row *ngIf="userId === post.creator || userRole === 'admin'">
       <a
         *ngIf="userId === post.creator"
         mat-button

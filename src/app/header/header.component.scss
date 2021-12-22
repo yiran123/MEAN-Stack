@@ -1,3 +1,15 @@
+mat-toolbar {
+  background: #939597;
+}
+
+.home {
+  padding-left: 1rem;
+}
+
+.btn-active {
+  color: #f5df4d;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -15,4 +27,8 @@ ul {
 
 ul {
   display: flex;
+}
+
+.btn-logout {
+  color: white;
 }
