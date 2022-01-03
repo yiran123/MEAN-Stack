@@ -3,9 +3,9 @@
   <mat-expansion-panel *ngFor="let post of posts; let i = index">
     <mat-expansion-panel-header>
       <mat-panel-title> {{ post?.title }}</mat-panel-title>
-      <!-- <mat-panel-description>
-        This is a summary of the content
-      </mat-panel-description> -->
+      <mat-panel-description>
+        {{ post?.creator }}
+      </mat-panel-description>
     </mat-expansion-panel-header>
     <div class="post-image">
       <img [src]="post.imagePath" [alt]="post.title" />
